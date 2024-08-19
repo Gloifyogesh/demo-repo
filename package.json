@@ -7,11 +7,24 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
+    "start:development": "ENVFILE=.env.development react-native start",
+    "start:qa": "ENVFILE=.env.qa react-native start",
+    "start:uat": "ENVFILE=.env.uat react-native start",
+    "start:production": "ENVFILE=.env.production react-native start",
+    "android:development": "ENVFILE=.env.development react-native run-android",
+    "ios:development": "ENVFILE=.env.development react-native run-ios",
+    "android:qa": "ENVFILE=.env.qa react-native run-android",
+    "ios:qa": "ENVFILE=.env.qa react-native run-ios",
+    "android:uat": "ENVFILE=.env.uat react-native run-android",
+    "ios:uat": "ENVFILE=.env.uat react-native run-ios",
+    "android:production": "ENVFILE=.env.production react-native run-android",
+    "ios:production": "ENVFILE=.env.production react-native run-ios",
     "test": "jest"
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.74.5"
+    "react-native": "0.74.5",
+    "react-native-dotenv": "^3.4.11"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

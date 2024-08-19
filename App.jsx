@@ -6,7 +6,8 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import {API_URL, APP_ENV} from '@env';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -25,11 +26,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+// import {TEST_VAR} from '@env';
 
-function Section({children, title}: SectionProps): React.JSX.Element {
+console.log('Loaded ENV:', process.env.ENVFILE);
+console.log('API URL:', API_URL);
+console.log('Environment:', APP_ENV);
+
+function Section({children, title}) {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -55,7 +58,7 @@ function Section({children, title}: SectionProps): React.JSX.Element {
   );
 }
 
-function App(): React.JSX.Element {
+function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -72,6 +75,7 @@ function App(): React.JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        {/* <Text>{TEST_VAR}</Text> */}
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
